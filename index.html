@@ -168,7 +168,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码/">代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/壁纸/">壁纸</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术摘要/">技术摘要</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/视频/">视频</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音乐/">音乐</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/代码/">代码</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/壁纸/">壁纸</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技术摘要/">技术摘要</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识文档/">知识文档</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/视频/">视频</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/音乐/">音乐</a></li></ul>
                     </div>
                 </section>
                 
@@ -244,6 +244,74 @@
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
       <div class="body-wrap">
+  
+    <article id="post-doc-将grub写入mbr" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/10/doc-将grub写入mbr/" class="article-date">
+      <time datetime="2016-06-10T08:14:59.000Z" itemprop="datePublished">2016-06-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/10/doc-将grub写入mbr/">将grub写入mbr</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <h1 id="把grub重新安装到MBR上面"><a href="#把grub重新安装到MBR上面" class="headerlink" title="把grub重新安装到MBR上面"></a>把grub重新安装到MBR上面</h1><p>现在习惯了开机启动的方法，所以我们把grub重新安装到硬盘的MBR上面。</p>
+<p>这个步骤也有两种方法，一是安装grub4dos,然后启动，选中搜索硬盘上的linux引导文件，进入Linux之后再安装grub到MBR上面;</p>
+<p>还有就是从光盘启动去之后，再安装grub。</p>
+<p>由于不想安装grub4dos,这里我们选择后者，从光盘或ISO启动到linux系统之后。</p>
+<p>打开终端（Ctrl+ALT+T）,取得管理员权限：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br></pre></td></tr></table></figure></p>
+<p>查找linux的根目录分区：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fdisk <span class="_">-l</span></span><br></pre></td></tr></table></figure></p>
+<p>然后挂载你的linux主分区，运行以下命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /media</span><br><span class="line">mkdir sda1</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意</strong> 挂载的是你linux所在的位置 如我的是sda1<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sda1 /media/sda1</span><br></pre></td></tr></table></figure></p>
+<p><em>这里补充一下，sda是你的第一块硬盘，sda1大概就是你第一块硬盘的第1个分区吧</em></p>
+<p>然后安装grub到第一块硬盘的MBR上面<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grub-install --root-directory=/media/sda1 /dev/sda</span><br></pre></td></tr></table></figure></p>
+<p>安装完之后，重启电脑就可以看到原来的菜单了。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/知识文档/">知识文档</a></li></ul>
+    </div>
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-lamtern-down-page" class="article article-type-post" itemscope itemprop="blogPost">
   
