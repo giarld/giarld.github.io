@@ -3,25 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>祝亲爱的老婆“六一儿童节”快乐！！！ | GiarlDxin</title>
+  <title>Linux下Qt5.6 Fcitx无法输入中文输入解决办法 | GiarlDxin</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="永远18岁">
-<meta property="og:type" content="website">
-<meta property="og:title" content="祝亲爱的老婆“六一儿童节”快乐！！！">
-<meta property="og:url" content="http://giarld.github.io/my-love/index.html">
+  <meta name="description" content="Qt5.6的解决办法和之前的版本有点不同，方法如下：首先安装 fcitx-frontend-qt5。然后执行：123sudo cp /usr/lib/x86_64-linux-gnu/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /opt/Qt5.6.0/Tools/QtCreator/lib/Qt/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux下Qt5.6 Fcitx无法输入中文输入解决办法">
+<meta property="og:url" content="http://giarld.github.io/2016/06/10/doc-linux-qt56-中文输入/index.html">
 <meta property="og:site_name" content="GiarlDxin">
-<meta property="og:description" content="永远18岁">
-<meta property="og:image" content="https://raw.githubusercontent.com/giarld/giarld.github.io/master/my_imgs/61pic.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/giarld/giarld.github.io/master/my_imgs/love_1.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/giarld/giarld.github.io/master/my_imgs/love_2.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/giarld/giarld.github.io/master/my_imgs/love_3.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/giarld/giarld.github.io/master/my_imgs/love_4.jpg">
-<meta property="og:image" content="https://raw.githubusercontent.com/giarld/giarld.github.io/master/my_imgs/love_5.jpg">
-<meta property="og:updated_time" content="2016-05-31T14:40:40.626Z">
+<meta property="og:description" content="Qt5.6的解决办法和之前的版本有点不同，方法如下：首先安装 fcitx-frontend-qt5。然后执行：123sudo cp /usr/lib/x86_64-linux-gnu/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /opt/Qt5.6.0/Tools/QtCreator/lib/Qt/">
+<meta property="og:updated_time" content="2016-06-10T08:53:48.370Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="祝亲爱的老婆“六一儿童节”快乐！！！">
-<meta name="twitter:description" content="永远18岁">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/giarld/giarld.github.io/master/my_imgs/61pic.jpg">
+<meta name="twitter:title" content="Linux下Qt5.6 Fcitx无法输入中文输入解决办法">
+<meta name="twitter:description" content="Qt5.6的解决办法和之前的版本有点不同，方法如下：首先安装 fcitx-frontend-qt5。然后执行：123sudo cp /usr/lib/x86_64-linux-gnu/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /opt/Qt5.6.0/Tools/QtCreator/lib/Qt/">
   
   
     <link rel="icon" href="/favicon.png">
@@ -49,7 +42,7 @@
           fancybox: true,
           animate: true,
           isHome: false,
-          isPost: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -246,11 +239,11 @@
     </div>
     <link class="menu-list" tags="标签" friends="友情链接" about="关于我"/>
 </nav>
-      <div class="body-wrap"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-doc-linux-qt56-中文输入" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/my-love/index.html" class="article-date">
-      <time datetime="2016-05-23T13:58:03.000Z" itemprop="datePublished">2016-05-23</time>
+      <a href="/2016/06/10/doc-linux-qt56-中文输入/" class="article-date">
+      <time datetime="2016-06-10T08:43:39.000Z" itemprop="datePublished">2016-06-10</time>
 </a>
     </div>
   
@@ -263,7 +256,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      祝亲爱的老婆“六一儿童节”快乐！！！
+      Linux下Qt5.6 Fcitx无法输入中文输入解决办法
     </h1>
   
 
@@ -273,6 +266,10 @@
         
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Qt/">Qt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/知识文档/">知识文档</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -280,30 +277,9 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-              <style>
-    .article-meta { display: none; }
-    #container .article .article-title { padding-right: 0; }
-    .article-header {
-        padding: 0;
-        padding-top: 26px;
-        border-left: none;
-        text-align: center;
-    }
-    .article-header:hover { border-left: none; }
-    .article-title { font-size: 1.6em }
-    .article-entry hr { margin: 0;}
-    .article-meta,
-    #container .article-info-post.article-info { display: none;}
-    #container .article .article-title { padding: 0; }
-</style>
-
-
-          
-        <p><img src="https://raw.githubusercontent.com/giarld/giarld.github.io/master/my_imgs/61pic.jpg" alt=""></p>
-<blockquote>
-<p>永远18岁</p>
-</blockquote>
-<p><img src="https://raw.githubusercontent.com/giarld/giarld.github.io/master/my_imgs/love_1.jpg" alt="老婆蒙蒙哒"><br><img src="https://raw.githubusercontent.com/giarld/giarld.github.io/master/my_imgs/love_2.jpg" alt="老婆最可爱"><br><img src="https://raw.githubusercontent.com/giarld/giarld.github.io/master/my_imgs/love_3.jpg" alt=""><br><img src="https://raw.githubusercontent.com/giarld/giarld.github.io/master/my_imgs/love_4.jpg" alt=""><br><img src="https://raw.githubusercontent.com/giarld/giarld.github.io/master/my_imgs/love_5.jpg" alt=""></p>
+        <p>Qt5.6的解决办法和之前的版本有点不同，方法如下：<br>首先安装 fcitx-frontend-qt5。<br>然后执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /usr/lib/x86_64-linux-gnu/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /opt/Qt5.6.0/Tools/QtCreator/lib/Qt/plugins/platforminputcontexts/</span><br><span class="line"></span><br><span class="line">sudo cp /usr/lib/x86_64-linux-gnu/qt5/plugins/platforminputcontexts/libfcitxplatforminputcontextplugin.so /opt/Qt5.6.0/5.6/gcc_64/plugins/platforminputcontexts/</span><br></pre></td></tr></table></figure></p>
+<p>OK！！！</p>
+<p>亲测Ubuntu16.04有效，其他版本Ubuntu和其他发行版未知，如有发现可行或不可行的发行版请留言到邮箱：<br><a href="mailto:xinxinqqt@sina.com" target="_blank" rel="external">xinxinqqt@sina.com</a></p>
 
       
     </div>
@@ -311,10 +287,79 @@
   </div>
   
     
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/06/10/doc-linux-qt56-中文输入/">Linux下Qt5.6 Fcitx无法输入中文输入解决办法</a></p>
+        <p><span>文章作者:</span><a href="/" title="回到主页">Gxin</a></p>
+        <p><span>发布时间:</span>2016-06-10, 16:43:39</p>
+        <p><span>最后更新:</span>2016-06-10, 16:53:48</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/06/10/doc-linux-qt56-中文输入/" title="Linux下Qt5.6 Fcitx无法输入中文输入解决办法">http://giarld.github.io/2016/06/10/doc-linux-qt56-中文输入/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://giarld.github.io/2016/06/10/doc-linux-qt56-中文输入/　　作者: Gxin" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
 
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/06/10/doc-将grub写入mbr/">
+                    将grub写入mbr
+                </a>
+            </div>
+        
+    </nav>
 
   
 </article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
 
 
 
@@ -332,7 +377,7 @@
         </div>
         <script>
             window._bd_share_config={
-                "common":{"bdSnsKey":{},"bdText":"祝亲爱的老婆“六一儿童节”快乐！！！　| GiarlDxin　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+                "common":{"bdSnsKey":{},"bdText":"Linux下Qt5.6 Fcitx无法输入中文输入解决办法　| GiarlDxin　","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         </script>
     
 
@@ -347,6 +392,24 @@
 
     
 
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/06/10/doc-将grub写入mbr/" title="下一篇: 将grub写入mbr">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/06/10/doc-linux-qt56-中文输入/">Linux下Qt5.6 Fcitx无法输入中文输入解决办法</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/10/doc-将grub写入mbr/">将grub写入mbr</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/05/lamtern-down-page/">lamtern(蓝灯下载地址)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/22/个人代码仓库地址/">个人代码仓库地址</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/20/music-test/">歌曲分享</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/20/video-test/">视频测试</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/05/20/page-a/">可爱的猫咪壁纸</a></li></ul>
 
 
 
