@@ -4,7 +4,14 @@
 <script>
 function changetext(id)
 {
-id.innerHTML="谢谢!";
+  id.innerHTML="谢谢!";
+  WebViewJavascriptBridge.callHandler(
+        'test'
+        , {'param': "hello js"}
+        , function(responseData) {
+            id.innerHTML = "send get responseData from java, data = " + responseData
+        }
+    );
 }
 </script>
 </head>
