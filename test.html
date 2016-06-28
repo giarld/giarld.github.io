@@ -4,10 +4,10 @@
 <script>
 function changetext()
 {
-  var text = document.getElementById("lineedit");
+  var text = document.getElementById("lineedit").value;
   WebViewJavascriptBridge.callHandler(
         'test'
-        , text
+        , {'text':text}
         , function(responseData) {
           document.getElementById("hh").innerHTML = responseData
         }
