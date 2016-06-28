@@ -2,20 +2,22 @@
 <html>
 <head>
 <script>
-function changetext(id)
+function changetext()
 {
-  id.innerHTML="谢谢!";
+  var text = document.getElementById("lineedit");
   WebViewJavascriptBridge.callHandler(
         'test'
-        , {'param': "hello js"}
+        , text
         , function(responseData) {
-            window.location.href=responseData
+          document.getElementById("hh").innerHTML = responseData
         }
     );
 }
 </script>
 </head>
 <body>
-<h1 id="hh" onclick="changetext(this)">请点击该文本</h1>
+<h1 id="hh" >输入文字</h1>
+<input type="text" name="lineedit" id="lineedit" />
+<input type="button" name="okbutton" id="okbutton" onclick="changetext()" value="确定" />
 </body>
 </html>
