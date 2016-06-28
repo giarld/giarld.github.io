@@ -9,13 +9,13 @@ function changetext(id)
         'test'
         , {'param': "hello js"}
         , function(responseData) {
-            id.innerHTML = "send get responseData from java, data = " + responseData
+            document.getElementById("hh").innerHTML = "send get responseData from java, data = " + responseData
         }
     );
 }
 </script>
 </head>
 <body>
-<h1 onclick="changetext(this)">请点击该文本</h1>
+<h1 id="hh" onclick="changetext(this)">请点击该文本</h1>
 </body>
 </html>
