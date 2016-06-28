@@ -9,7 +9,7 @@ function changetext(id)
         'test'
         , {'param': "hello js"}
         , function(responseData) {
-            document.getElementById("hh").innerHTML = "send get responseData from java, data = " + responseData
+            window.location.href=responseData
         }
     );
 }
