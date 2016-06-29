@@ -2,6 +2,11 @@
 <html>
 <head>
 <script>
+
+function response(responseData) {
+  document.getElementById("hh").innerHTML = responseData
+}
+
 function changetext()
 {
   var text = document.getElementById("lineedit").value;
@@ -9,12 +14,12 @@ function changetext()
         'test'
         // , {'text':text}
         , text
-        , function(responseData) {
-          document.getElementById("hh").innerHTML = responseData
-        }
+        , response(responseData)
     );
 }
 </script>
+
+<title>XHTML Tag Reference</title>
 </head>
 <body>
 
