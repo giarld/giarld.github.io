@@ -3,10 +3,6 @@
 <head>
 <script>
 
-function response(responseData) {
-  document.getElementById("hh").innerHTML = responseData
-}
-
 function changetext()
 {
   var text = document.getElementById("lineedit").value;
@@ -14,7 +10,9 @@ function changetext()
         'test'
         // , {'text':text}
         , text
-        , response(responseData)
+        , function(responseData){
+          document.getElementById("hh").innerHTML = responseData;
+        }
     );
 }
 </script>
