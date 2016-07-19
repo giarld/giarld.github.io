@@ -16,21 +16,7 @@ function changetext()
     );
 }
 
-function getCookie(name)
-{
-  var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
-  if(arr=document.cookie.match(reg))
-    return unescape(arr[2]);
-  else
-    return null;
-}
-
 function showCookies() {
-  // var cookiea = getCookie("X-TOKEN");
-  // if(cookiea == null)
-  //   document.getElementById("showCookie").innerHTML = "Read Cookie Eroor";
-  // else
-  //   document.getElementById("showCookie").innerHTML = getCookie("X-TOKEN");
   document.getElementById("showCookie").innerHTML = document.cookie;
 }
 </script>
