@@ -15,15 +15,29 @@ function changetext()
         }
     );
 }
+
+function getCookie(name)
+{
+  var arr,reg=new RegExp("(^| )"+name+"=([^;]*)(;|$)");
+  if(arr=document.cookie.match(reg))
+    return unescape(arr[2]);
+  else
+    return null;
+}
+
+function showCookies() {
+  document.getElementById("showCookie").innerHTML = getCookie("X-TOKEN");
+}
 </script>
 
 <title>Test BoxBridgeWebView</title>
 </head>
-<body>
+<body onload="showCookies()">
 
 <h1>BoxBridgeWebView js调用java测试</h1>
 <h2 id="hh" >输入文字：</h1>
 <input type="text" name="lineedit" id="lineedit" />
 <input type="button" name="okbutton" id="okbutton" onclick="changetext()" value="确定" />
+<p id="showCookie"></p>
 </body>
 </html>
