@@ -26,7 +26,11 @@ function getCookie(name)
 }
 
 function showCookies() {
-  document.getElementById("showCookie").innerHTML = getCookie("X-TOKEN");
+  var cookiea = getCookie("X-TOKEN");
+  if(cookiea == null)
+    document.getElementById("showCookie").innerHTML = "Read Cookie Eroor";
+  else
+    document.getElementById("showCookie").innerHTML = getCookie("X-TOKEN");
 }
 </script>
 
