@@ -16,6 +16,32 @@ function changetext()
     );
 }
 
+function connectWebViewJavascriptBridge(callback) {
+        if (window.WebViewJavascriptBridge) {
+            callback(WebViewJavascriptBridge)
+        } else {
+            document.addEventListener(
+                'WebViewJavascriptBridgeReady'
+                , function() {
+                    callback(WebViewJavascriptBridge)
+                },
+                false
+            );
+        }
+    }
+   // 第一连接时初始化bridage
+connectWebViewJavascriptBridge(function(bridge) {
+    console.log('connectWebViewJavascriptBridge start');
+        bridge.init(function(message, responseCallback) {
+            console.log('JS got a message', message);
+            var data = {
+                'Javascript Responds': '测试中文!'
+            };
+            console.log('JS responding with', data);
+            responseCallback(data);
+        });
+})
+
 function showCookies() {
   document.getElementById("showCookie").innerHTML = document.cookie;
 }
