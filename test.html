@@ -87,8 +87,9 @@
         function getProductVersion() {
             WebViewJavascriptBridge.callHandler(
                 'getProductVersion'
+                ,''
                 , function (responseData) {
-                    document.getElementById("hh").innerHTML = responseData.version;
+                    document.getElementById("hh").innerHTML = JSON.stringify(responseData);
                 }
             );
         }
@@ -96,6 +97,7 @@
         function openExchangeEarningsPage() {
             WebViewJavascriptBridge.callHandler(
                 'openExchangeEarningsPage'
+                ,''
                 , function (responseData) {
                     document.getElementById("hh").innerHTML = "打开兑换页完成";
                 }
