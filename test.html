@@ -83,11 +83,11 @@
                 }
             );
         }
-        
+
         function getProductVersion() {
             WebViewJavascriptBridge.callHandler(
                 'getProductVersion'
-                ,''
+                , ''
                 , function (responseData) {
                     document.getElementById("hh").innerHTML = JSON.stringify(responseData);
                 }
@@ -97,7 +97,7 @@
         function openExchangeEarningsPage() {
             WebViewJavascriptBridge.callHandler(
                 'openExchangeEarningsPage'
-                ,''
+                , ''
                 , function (responseData) {
                     document.getElementById("hh").innerHTML = "打开兑换页完成";
                 }
@@ -107,7 +107,7 @@
         function openMyEarningsPage() {
             WebViewJavascriptBridge.callHandler(
                 'openMyEarningsPage'
-                ,''
+                , ''
                 , function (responseData) {
                     document.getElementById("hh").innerHTML = "打开收益页完成";
                 }
@@ -117,7 +117,7 @@
         function openAcccountRechargePage() {
             WebViewJavascriptBridge.callHandler(
                 'openAcccountRechargePage'
-                ,''
+                , ''
                 , function (responseData) {
                     document.getElementById("hh").innerHTML = "打开充值页完成";
                 }
@@ -127,7 +127,7 @@
         function openSharePage() {
             WebViewJavascriptBridge.callHandler(
                 'openSharePage'
-                ,''
+                , ''
                 , function (responseData) {
                     document.getElementById("hh").innerHTML = "打开分享弹窗完成";
                 }
@@ -137,13 +137,32 @@
         function notifyLiveRealAuthSucc() {
             WebViewJavascriptBridge.callHandler(
                 'notifyLiveRealAuthSucc'
-                ,''
+                , ''
                 , function (responseData) {
                     document.getElementById("hh").innerHTML = "打开实名认证完成";
                 }
             );
         }
 
+        function getUserInfo() {
+            WebViewJavascriptBridge.callHandler(
+                'getUserInfo'
+                , ''
+                , function (responseData) {
+                    document.getElementById("hh").innerHTML = JSON.stringify(responseData);
+                }
+            );
+        }
+
+        function openWebBroswerHandle() {
+            WebViewJavascriptBridge.callHandler(
+                'openWebBroswerHandle'
+                , { 'url': 'http://www.baidu.com', 'showShare': true }
+                , function (responseData) {
+                    document.getElementById("hh").innerHTML = "打开新网页完成";
+                }
+            );
+        }
     </script>
 
     <title>Test BoxBridgeWebView</title>
@@ -182,19 +201,29 @@
         <input type="button" name="getProductVersion" id="getProductVersion" onclick="getProductVersion()" value="获得系统版本号" />
     </p>
     <p>
-        <input type="button" name="openExchangeEarningsPage" id="openExchangeEarningsPage" onclick="openExchangeEarningsPage()" value="打开兑换收益页" />
+        <input type="button" name="openExchangeEarningsPage" id="openExchangeEarningsPage" onclick="openExchangeEarningsPage()" value="打开兑换收益页"
+        />
     </p>
     <p>
         <input type="button" name="openMyEarningsPage" id="openMyEarningsPage" onclick="openMyEarningsPage()" value="打开收益页" />
     </p>
     <p>
-        <input type="button" name="openAcccountRechargePage" id="openAcccountRechargePage" onclick="openAcccountRechargePage()" value="打开充值页" />
+        <input type="button" name="openAcccountRechargePage" id="openAcccountRechargePage" onclick="openAcccountRechargePage()" value="打开充值页"
+        />
     </p>
     <p>
         <input type="button" name="openSharePage" id="openSharePage" onclick="openSharePage()" value="分享弹窗" />
     </p>
     <p>
-        <input type="button" name="notifyLiveRealAuthSucc" id="notifyLiveRealAuthSucc" onclick="notifyLiveRealAuthSucc()" value="实名认证" />
+        <input type="button" name="notifyLiveRealAuthSucc" id="notifyLiveRealAuthSucc" onclick="notifyLiveRealAuthSucc()" value="实名认证"
+        />
+    </p>
+    <p>
+        <input type="button" name="getUserInfo" id="getUserInfo" onclick="getUserInfo()" value="获取用户信息" />
+    </p>
+    <p>
+        <input type="button" name="openWebBroswerHandle" id="openWebBroswerHandle" onclick="openWebBroswerHandle()" value="打开新浏览器"
+        />
     </p>
 </body>
 
