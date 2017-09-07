@@ -61,6 +61,17 @@
                 }
             );
         }
+
+        function openChatPage() {
+            var userId = document.getElementById("chatUserIdText").value;
+            WebViewJavascriptBridge.callHandler(
+                'openChatPage'
+                , { 'userID': userId }
+                , function (responseData) {
+                    document.getElementById("hh").innerHTML = "进入直播间完成";
+                }
+            );
+        }
     </script>
 
     <title>Test BoxBridgeWebView</title>
@@ -69,16 +80,20 @@
 <body>
 
     <h1>BoxBridgeWebView js调用java测试</h1>
-    <h2 id="hh">输入文字：</h1>
-        <input type="text" name="lineedit" id="lineedit" />
-        <input type="button" name="okbutton" id="okbutton" onclick="changetext()" value="确定" />
-        <p>
-            <input type="button" name="enterLiveLaunchPage" id="enterLiveLaunchPage" onclick="enterLiveLaunchPage()" value="发起直播" />
-        </p>
-        <p>
-            <input type="text" name="roomIdText" id="roomIdText" />
-            <input type="button" name="enterLiveRoom" id="enterLiveRoom" onclick="enterLiveRoom()" value="进入直播间" />
-        </p>
+    <h2 id="hh">输入文字：</h2>
+    <input type="text" name="lineedit" id="lineedit" />
+    <input type="button" name="okbutton" id="okbutton" onclick="changetext()" value="确定" />
+    <p>
+        <input type="button" name="enterLiveLaunchPage" id="enterLiveLaunchPage" onclick="enterLiveLaunchPage()" value="发起直播" />
+    </p>
+    <p>
+        <input type="text" name="roomIdText" id="roomIdText" />
+        <input type="button" name="enterLiveRoom" id="enterLiveRoom" onclick="enterLiveRoom()" value="进入直播间" />
+    </p>
+    <p>
+        <input type="text" name="chatUserIdText" id="chatUserIdText" />
+        <input type="button" name="openChatPage" id="openChatPage" onclick="openChatPage()" value="发起聊天" />
+    </p>
 </body>
 
 </html>
