@@ -83,6 +83,15 @@
                 }
             );
         }
+        
+        function getProductVersion() {
+            WebViewJavascriptBridge.callHandler(
+                'getProductVersion'
+                , function (responseData) {
+                    document.getElementById("hh").innerHTML = JSON.stringify(responseData);
+                }
+            );
+        }
     </script>
 
     <title>Test BoxBridgeWebView</title>
@@ -94,14 +103,17 @@
     <h2 id="hh">输入文字：</h2>
     <input type="text" name="lineedit" id="lineedit" />
     <input type="button" name="okbutton" id="okbutton" onclick="changetext()" value="确定" />
+    <!-- 开直播 -->
     <p>
         <input type="button" name="enterLiveLaunchPage" id="enterLiveLaunchPage" onclick="enterLiveLaunchPage()" value="发起直播" />
     </p>
+    <!-- 进直播间 -->
     <p>
         <input type="text" name="roomIdText" id="roomIdText" />
         <input type="button" name="enterLiveRoom" id="enterLiveRoom" onclick="enterLiveRoom()" value="进入直播间" />
     </p>
     <h3>----------------------------------------</h3>
+    <!-- 用户相关 -->
     <p>
         用户ID：
         <input type="text" name="userIdText" id="userIdText" />
@@ -111,6 +123,11 @@
     </p>
     <p>
         <input type="button" name="openUserHomePage" id="openUserHomePage" onclick="openUserHomePage()" value="进入空间" />
+    </p>
+    <!-- 其他 -->
+    <h3>----------------------------------------</h3>
+    <p>
+        <input type="button" name="getProductVersion" id="getProductVersion" onclick="getProductVersion()" value="获得系统版本号" />
     </p>
 </body>
 
