@@ -88,7 +88,16 @@
             WebViewJavascriptBridge.callHandler(
                 'getProductVersion'
                 , function (responseData) {
-                    document.getElementById("hh").innerHTML = JSON.stringify(responseData);
+                    document.getElementById("hh").innerHTML = responseData.version;
+                }
+            );
+        }
+
+        function openExchangeEarningsPage() {
+            WebViewJavascriptBridge.callHandler(
+                'openExchangeEarningsPage'
+                , function (responseData) {
+                    document.getElementById("hh").innerHTML = "打开兑换页完成";
                 }
             );
         }
@@ -128,6 +137,9 @@
     <h3>----------------------------------------</h3>
     <p>
         <input type="button" name="getProductVersion" id="getProductVersion" onclick="getProductVersion()" value="获得系统版本号" />
+    </p>
+    <p>
+        <input type="button" name="openExchangeEarningsPage" id="openExchangeEarningsPage" onclick="openExchangeEarningsPage()" value="打开兑换收益页" />
     </p>
 </body>
 
