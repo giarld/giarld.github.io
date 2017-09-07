@@ -42,20 +42,29 @@ connectWebViewJavascriptBridge(function(bridge) {
         });
 })
 
-function showCookies() {
-  document.getElementById("showCookie").innerHTML = document.cookie;
-  alert(document.cookie);
+function enterLiveLaunchPage()
+{
+  WebViewJavascriptBridge.callHandler(
+        'enterLiveLaunchPage'
+        , {'topic':""}
+        , function(responseData){
+          document.getElementById("hh").innerHTML = "发起直播完成";
+        }
+    );
 }
+
 </script>
 
 <title>Test BoxBridgeWebView</title>
 </head>
-<body onload="showCookies()">
+<body>
 
 <h1>BoxBridgeWebView js调用java测试</h1>
 <h2 id="hh" >输入文字：</h1>
 <input type="text" name="lineedit" id="lineedit" />
 <input type="button" name="okbutton" id="okbutton" onclick="changetext()" value="确定" />
-<p id="showCookie"></p>
+<p>
+    <input type="button" name="enterLiveLaunchPage" id="enterLiveLaunchPage" onclick="enterLiveLaunchPage()" value="发起直播" />
+</p>
 </body>
 </html>
