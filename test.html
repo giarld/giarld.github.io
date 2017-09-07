@@ -103,6 +103,27 @@
                 }
             );
         }
+
+        function openMyEarningsPage() {
+            WebViewJavascriptBridge.callHandler(
+                'openMyEarningsPage'
+                ,''
+                , function (responseData) {
+                    document.getElementById("hh").innerHTML = "打开收益页完成";
+                }
+            );
+        }
+
+        function openAcccountRechargePage() {
+            WebViewJavascriptBridge.callHandler(
+                'openAcccountRechargePage'
+                ,''
+                , function (responseData) {
+                    document.getElementById("hh").innerHTML = "打开充值页完成";
+                }
+            );
+        }
+
     </script>
 
     <title>Test BoxBridgeWebView</title>
@@ -142,6 +163,12 @@
     </p>
     <p>
         <input type="button" name="openExchangeEarningsPage" id="openExchangeEarningsPage" onclick="openExchangeEarningsPage()" value="打开兑换收益页" />
+    </p>
+    <p>
+        <input type="button" name="openMyEarningsPage" id="openMyEarningsPage" onclick="openMyEarningsPage()" value="打开收益页" />
+    </p>
+    <p>
+        <input type="button" name="openAcccountRechargePage" id="openAcccountRechargePage" onclick="openAcccountRechargePage()" value="打开充值页" />
     </p>
 </body>
 
