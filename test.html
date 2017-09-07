@@ -63,12 +63,23 @@
         }
 
         function openChatPage() {
-            var userId = document.getElementById("chatUserIdText").value;
+            var userId = document.getElementById("userIdText").value;
             WebViewJavascriptBridge.callHandler(
                 'openChatPage'
                 , { 'userID': userId }
                 , function (responseData) {
-                    document.getElementById("hh").innerHTML = "进入直播间完成";
+                    document.getElementById("hh").innerHTML = "发起聊天完成";
+                }
+            );
+        }
+
+        function openUserHomePage() {
+            var userId = document.getElementById("userIdText").value;
+            WebViewJavascriptBridge.callHandler(
+                'openUserHomePage'
+                , { 'userID': userId }
+                , function (responseData) {
+                    document.getElementById("hh").innerHTML = "进入空间完成";
                 }
             );
         }
@@ -90,9 +101,16 @@
         <input type="text" name="roomIdText" id="roomIdText" />
         <input type="button" name="enterLiveRoom" id="enterLiveRoom" onclick="enterLiveRoom()" value="进入直播间" />
     </p>
+    <h3>----------------------------------------</h3>
     <p>
-        <input type="text" name="chatUserIdText" id="chatUserIdText" />
+        用户ID：
+        <input type="text" name="userIdText" id="userIdText" />
+    </p>
+    <p>
         <input type="button" name="openChatPage" id="openChatPage" onclick="openChatPage()" value="发起聊天" />
+    </p>
+    <p>
+        <input type="button" name="openUserHomePage" id="openUserHomePage" onclick="openUserHomePage()" value="进入空间" />
     </p>
 </body>
 
