@@ -124,6 +124,26 @@
             );
         }
 
+        function openSharePage() {
+            WebViewJavascriptBridge.callHandler(
+                'openSharePage'
+                ,''
+                , function (responseData) {
+                    document.getElementById("hh").innerHTML = "打开分享弹窗完成";
+                }
+            );
+        }
+
+        function notifyLiveRealAuthSucc() {
+            WebViewJavascriptBridge.callHandler(
+                'notifyLiveRealAuthSucc'
+                ,''
+                , function (responseData) {
+                    document.getElementById("hh").innerHTML = "打开实名认证完成";
+                }
+            );
+        }
+
     </script>
 
     <title>Test BoxBridgeWebView</title>
@@ -169,6 +189,12 @@
     </p>
     <p>
         <input type="button" name="openAcccountRechargePage" id="openAcccountRechargePage" onclick="openAcccountRechargePage()" value="打开充值页" />
+    </p>
+    <p>
+        <input type="button" name="openSharePage" id="openSharePage" onclick="openSharePage()" value="分享弹窗" />
+    </p>
+    <p>
+        <input type="button" name="notifyLiveRealAuthSucc" id="notifyLiveRealAuthSucc" onclick="notifyLiveRealAuthSucc()" value="实名认证" />
     </p>
 </body>
 
