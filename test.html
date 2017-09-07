@@ -167,7 +167,7 @@
         function openWebViewHandle() {
             WebViewJavascriptBridge.callHandler(
                 'openWebViewHandle'
-                , { 'url': 'http://www.baidu.com', 'closeInteraction': true }
+                , { 'url': 'http://www.baidu.com', 'closeInteraction': false }
                 , function (responseData) {
                     document.getElementById("hh").innerHTML = "打开浏览器视图完成";
                 }
