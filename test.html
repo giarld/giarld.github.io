@@ -1,70 +1,84 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<script>
-
-function changetext()
-{
-  var text = document.getElementById("lineedit").value;
-  WebViewJavascriptBridge.callHandler(
-        'test'
-        // , {'text':text}
-        , text
-        , function(responseData){
-          document.getElementById("hh").innerHTML = responseData;
-        }
-    );
-}
-
-function connectWebViewJavascriptBridge(callback) {
-        if (window.WebViewJavascriptBridge) {
-            callback(WebViewJavascriptBridge)
-        } else {
-            document.addEventListener(
-                'WebViewJavascriptBridgeReady'
-                , function() {
-                    callback(WebViewJavascriptBridge)
-                },
-                false
+    <script>
+        function changetext() {
+            var text = document.getElementById("lineedit").value;
+            WebViewJavascriptBridge.callHandler(
+                'test'
+                // , {'text':text}
+                , text
+                , function (responseData) {
+                    document.getElementById("hh").innerHTML = responseData;
+                }
             );
         }
-    }
-   // 第一连接时初始化bridage
-connectWebViewJavascriptBridge(function(bridge) {
-    console.log('connectWebViewJavascriptBridge start');
-        bridge.init(function(message, responseCallback) {
-            console.log('JS got a message', message);
-            var data = {
-                'Javascript Responds': '测试中文!'
-            };
-            console.log('JS responding with', data);
-            responseCallback(data);
-        });
-})
 
-function enterLiveLaunchPage()
-{
-  WebViewJavascriptBridge.callHandler(
-        'enterLiveLaunchPage'
-        , {'topic':""}
-        , function(responseData){
-          document.getElementById("hh").innerHTML = "发起直播完成";
+        function connectWebViewJavascriptBridge(callback) {
+            if (window.WebViewJavascriptBridge) {
+                callback(WebViewJavascriptBridge)
+            } else {
+                document.addEventListener(
+                    'WebViewJavascriptBridgeReady'
+                    , function () {
+                        callback(WebViewJavascriptBridge)
+                    },
+                    false
+                );
+            }
         }
-    );
-}
+        // 第一连接时初始化bridage
+        connectWebViewJavascriptBridge(function (bridge) {
+            console.log('connectWebViewJavascriptBridge start');
+            bridge.init(function (message, responseCallback) {
+                console.log('JS got a message', message);
+                var data = {
+                    'Javascript Responds': '测试中文!'
+                };
+                console.log('JS responding with', data);
+                responseCallback(data);
+            });
+        })
 
-</script>
+        function enterLiveLaunchPage() {
+            WebViewJavascriptBridge.callHandler(
+                'enterLiveLaunchPage'
+                , { 'topic': "" }
+                , function (responseData) {
+                    document.getElementById("hh").innerHTML = "发起直播完成";
+                }
+            );
+        }
 
-<title>Test BoxBridgeWebView</title>
+        function enterLiveRoom() {
+            var liveID = document.getElementById("roomIdText").value;
+            WebViewJavascriptBridge.callHandler(
+                'enterLiveRoom'
+                , { 'liveID': liveID }
+                , function (responseData) {
+                    document.getElementById("hh").innerHTML = "进入直播间完成";
+                }
+            );
+        }
+    </script>
+
+    <title>Test BoxBridgeWebView</title>
 </head>
+
 <body>
 
-<h1>BoxBridgeWebView js调用java测试</h1>
-<h2 id="hh" >输入文字：</h1>
-<input type="text" name="lineedit" id="lineedit" />
-<input type="button" name="okbutton" id="okbutton" onclick="changetext()" value="确定" />
-<p>
-    <input type="button" name="enterLiveLaunchPage" id="enterLiveLaunchPage" onclick="enterLiveLaunchPage()" value="发起直播" />
-</p>
+    <h1>BoxBridgeWebView js调用java测试</h1>
+    <h2 id="hh">输入文字：</h1>
+        <input type="text" name="lineedit" id="lineedit" />
+        <input type="button" name="okbutton" id="okbutton" onclick="changetext()" value="确定" />
+        <p>
+            <input type="button" name="enterLiveLaunchPage" id="enterLiveLaunchPage" onclick="enterLiveLaunchPage()" value="发起直播" />
+        </p>
+        <p>
+            <input type="text" name="roomIdText" id="roomIdText" />
+            <input type="button" name="enterLiveRoom" id="enterLiveRoom" onclick="enterLiveRoom()" value="进入直播间" />
+        </p>
 </body>
+
 </html>
