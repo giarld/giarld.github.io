@@ -163,6 +163,16 @@
                 }
             );
         }
+
+        function openWebViewHandle() {
+            WebViewJavascriptBridge.callHandler(
+                'openWebViewHandle'
+                , { 'url': 'http://www.baidu.com', 'closeInteraction': true }
+                , function (responseData) {
+                    document.getElementById("hh").innerHTML = "打开浏览器视图完成";
+                }
+            );
+        }
     </script>
 
     <title>Test BoxBridgeWebView</title>
@@ -222,8 +232,10 @@
         <input type="button" name="getUserInfo" id="getUserInfo" onclick="getUserInfo()" value="获取用户信息" />
     </p>
     <p>
-        <input type="button" name="openWebBroswerHandle" id="openWebBroswerHandle" onclick="openWebBroswerHandle()" value="打开新浏览器"
-        />
+        <input type="button" name="openWebBroswerHandle" id="openWebBroswerHandle" onclick="openWebBroswerHandle()" value="打开新浏览器"/>
+    </p>
+    <p>
+        <input type="button" name="openWebViewHandle" id="openWebViewHandle" onclick="openWebViewHandle()" value="打开浏览器视图"/>
     </p>
 </body>
 
