@@ -173,6 +173,11 @@
                 }
             );
         }
+        
+        function openAppToLive() {
+            location.href = 'http://127.0.0.1:9561?use=2&callback=xxx&moduleName=liveRoom&param={"liveID":"123456"}'
+        }
+
     </script>
 
     <title>Test BoxBridgeWebView</title>
@@ -236,6 +241,10 @@
     </p>
     <p>
         <input type="button" name="openWebViewHandle" id="openWebViewHandle" onclick="openWebViewHandle()" value="打开浏览器视图"/>
+    </p>
+    <h3>----------------------------------------</h3>
+    <p>
+        <input type="button" name="openAppToLive" id="openAppToLive" onclick="openAppToLive()" value="打开应用进直播"/>
     </p>
 </body>
 
