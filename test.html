@@ -177,6 +177,10 @@
         function openAppToLive() {
             location.href = 'http://127.0.0.1:9561?use=2&callback=xxx&moduleName=liveRoom&param={"liveID":"123456"}'
         }
+        
+        function xxx(data) {
+            document.getElementById("hh").innerHTML = JSON.stringify(data);
+        }
 
     </script>
 
